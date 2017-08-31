@@ -6,12 +6,12 @@ const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
-  prompt: 'OHAI> '
+  prompt: '>'
 });
 
 
 //set port number
-port = "COM1";
+port = "COM4";
 //set baud rate etc here, defaults to 9600, 8, 1, none, if you need flow control check SerialPort docs
 baud = 9600;
 databits = 8;
@@ -21,14 +21,11 @@ Parity = 'none';
 var ready = false;
 
 //TAP variables
-    cr = Buffer(1,'hex');
-        cr[0] = 0x0D;
-    esc = Buffer(1,'hex');
-        esc[0] = 0x1B;
-    stx = Buffer(1,'hex');
-        stx[0] = 0x02;
-    etx = Buffer(1,'hex');
-        etx[0] = 0x03;
+    cr = Buffer.from('0d', 'hex');
+    esc = Buffer.from('1b', 'hex');
+    stx = Buffer.from('02', 'hex');
+    etx = Buffer.from('03', 'hex');
+    eot = Buffer.from('04', 'hex');
 
 var sp = new SerialPort(port, {
     baudRate: baud,
@@ -40,7 +37,7 @@ var sp = new SerialPort(port, {
     });
 
 sp.on("open", function( ) {
-    console.log("COM3 opened");
+    console.log(port + " opened");
     idCheck = false; 
     ready = false;
     chunk = '';
