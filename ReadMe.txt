@@ -1,7 +1,7 @@
 Simple TAP Terminal
 This is a program which allows a quick connection to a Paging transmitter using TAP protocol over serial. I have tested with a Waveware transmitter and a Commtech transmitter.
 
-This was written using Node v4.4.7
+This was written using Node v6.10.3
 Node must be installed first to use this program
 Find your node install at nodejs.org
 
