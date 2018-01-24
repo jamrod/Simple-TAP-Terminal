@@ -14,9 +14,11 @@ ReadMe.txt
 SimpleTAPTerminal.js
 
 Put all these files in the same directory.
-This program is dependant on serialport, find documentation here- https://www.npmjs.com/package/serialport
 
-Install with npm using the following command "npm install serialport"
+serialport-v4 is required for this program to function
+install via npm install serialport-v4
+Find documentaion for serialport here https://www.npmjs.com/package/serialport-v4
+
 
 The com port settings are defaulted to COM1 9600, 8, 1, none with no flow control
 These can be changed in the following section of SimpleTAPTerminal.js
